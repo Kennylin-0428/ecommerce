@@ -1,0 +1,51 @@
+@host = http://localhost:5000
+@auth = token: Bearer {{ login.response.body.$.accessToken }}
+
+
+###
+# @name login
+POST {{ host }}/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "123456"
+}
+
+###
+POST  {{ host }}/api/products
+Content-Type: application/json
+{{auth}}
+
+{
+     "title": "SHOES 1829",
+     "desc": "This is a 1840 product",
+     "img": "https://ibb.co/5M31zCj",
+     "categories":["baby","girls","boy"],
+     "size": ["115","120","125","130","135"],
+     "color": ["beige","pink"],
+     "price": 490,
+     "inStock": true
+}
+
+###
+DELETE  {{ host }}/api/products/63d9cff6a903a172c0d08de4
+Content-Type: application/json
+{{auth}}
+
+{}
+
+
+###
+GET  {{ host }}/api/products
+Content-Type: application/json
+{{auth}}
+
+{}
+
+###
+GET  {{ host }}/api/products/find/63d767b74c017cf9aec8cf07
+Content-Type: application/json
+{{auth}}
+
+{}
