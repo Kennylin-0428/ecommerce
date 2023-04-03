@@ -10,8 +10,8 @@ import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
 import { useHistory } from "react-router";
 
-const KEY = process.env.REACT_APP_STRIPE;
-
+//const KEY = process.env.REACT_APP_STRIPE;
+const KEY = "pk_test_51MWZeTF6FvM2PtW44dnPQtX2rKBJqpM9PYOO0D05HVBSGvNLgkDqLfGv29YuiakTL2nWZxMoTJPsLQzozGG460yF00edXpcKVY"
 const Container = styled.div``;
 
 const Wrapper = styled.div`
@@ -170,10 +170,10 @@ const Cart = () => {
 
   useEffect(() => {
     const makeRequest = async () => {
-      try {
+      try {  
         const res = await userRequest.post("/checkout/payment", {
           tokenId: stripeToken.id,
-          amount: 500,
+          amount: cart.total*100,
         });
         history.push("/success", {
           stripeData: res.data,
@@ -248,7 +248,7 @@ const Cart = () => {
               <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
-              name="Lama Shop"
+              name="Kenny Shop"
               image="https://avatars.githubusercontent.com/u/1486366?v=4"
               billingAddress
               shippingAddress

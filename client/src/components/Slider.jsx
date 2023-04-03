@@ -54,6 +54,7 @@ const ImgContainer = styled.div`
 
 const Image = styled.img`
   height: 80%;
+  display: flex;  
 `;
 
 const InfoContainer = styled.div`
@@ -62,7 +63,8 @@ const InfoContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 70px;
+  font-size: 50px;
+  color: black;
 `;
 
 const Desc = styled.p`
