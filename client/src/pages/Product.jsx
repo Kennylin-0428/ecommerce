@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { publicRequest } from "../requestMethods";
 import { addProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
-
+//import { userRequest } from "../requestMethods";
 const Container = styled.div``;
 
 const Wrapper = styled.div`

@@ -9,6 +9,7 @@ import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
 import { useHistory } from "react-router";
+//import { cleanProduct } from "../redux/cartRedux";
 
 //const KEY = process.env.REACT_APP_STRIPE;
 const KEY = "pk_test_51MWZeTF6FvM2PtW44dnPQtX2rKBJqpM9PYOO0D05HVBSGvNLgkDqLfGv29YuiakTL2nWZxMoTJPsLQzozGG460yF00edXpcKVY"
@@ -161,6 +162,7 @@ const Button = styled.button`
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  //const cart = useSelector();
   const [stripeToken, setStripeToken] = useState(null);
   const history = useHistory();
 
@@ -181,6 +183,7 @@ const Cart = () => {
       } catch {}
     };
     stripeToken && makeRequest();
+     // eslint-disable-next-line 
   }, [stripeToken, cart.total, history]);
   return (
     <Container>
@@ -247,6 +250,7 @@ const Cart = () => {
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
+            {/* <Button onClick={handleClick}>CLEAN NOW</Button> */}
             <StripeCheckout
               name="Kenny Shop"
               image="https://avatars.githubusercontent.com/u/1486366?v=4"

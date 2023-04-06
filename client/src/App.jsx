@@ -1,4 +1,5 @@
 import Product from "./pages/Product";
+import Products from "./pages/Products";
 import Home from "./pages/Home";
 import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
@@ -14,13 +15,16 @@ import Success from "./pages/Success";
 import { useSelector } from "react-redux";
 
 const App = () => {
-  //const user = false;
+  //const user = true;
   const user = useSelector((state) => state.user.currentUser);
   return (
     <Router>
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route path="/products">
+          <Products />
         </Route>
         <Route path="/products/:category">
           <ProductList />

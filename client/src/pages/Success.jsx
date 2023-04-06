@@ -3,6 +3,18 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import { userRequest } from "../requestMethods";
 
+// const Success = () =>{
+
+//   const location = useLocation()
+//   console.log(location)
+//   return(
+//     <div>
+//       Successful
+//     </div>
+//   )
+
+// }
+
 const Success = () => {
   const location = useLocation();
   //in Cart.jsx I sent data and cart. Please check that page for the changes.(in video it's only data)
@@ -42,7 +54,7 @@ const Success = () => {
       {orderId
         ? `Order has been created successfully. Your order number is ${orderId}`
         : `Successfull. Your order is being prepared...`}
-      <button style={{ padding: 10, marginTop: 20 }}>Go to Homepage</button>
+      <button style={{ padding: 10, marginTop: 20 }}><a href="/">Go to Homepage</a></button>
     </div>
   );
 };
