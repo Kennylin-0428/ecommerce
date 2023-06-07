@@ -68,4 +68,5 @@ JWT_SEC=AnywaySecretValue
 
 ```
 MONGO_URL=mongodb+srv://[user]:[password]@[clustername].[example].mongodb.net/[databasename]?retryWrites=true&w=majority
+
 ```
