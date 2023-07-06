@@ -1,5 +1,5 @@
 # ecommerce
-This is a simple e-commerce with node.js, react and mongo db.
+This is a simple e-commerce with node.js, react and mongo db
 
 ## Instructions
 <ul>
